@@ -7,6 +7,10 @@ public class Teacher extends Person{
         super(id, name, age);
         this.klass = klass;
     }
+    public Teacher(Integer id, String name, Integer age) {
+        super(id, name, age);
+    }
+
 
     public Klass getKlass() {
         return klass;
