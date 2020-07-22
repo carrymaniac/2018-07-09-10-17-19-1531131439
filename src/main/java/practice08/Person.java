@@ -1,5 +1,7 @@
 package practice08;
 
+import java.util.Objects;
+
 public class Person {
     Integer id;
     String name;
@@ -33,6 +35,21 @@ public class Person {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(id, person.id) &&
+                Objects.equals(name, person.name) &&
+                Objects.equals(age, person.age);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age);
     }
 
     public String introduce(){
