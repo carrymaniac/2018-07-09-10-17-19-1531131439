@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.LinkedList;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -92,17 +93,17 @@ public class Practice11Test {
         klass2.assignLeader(tom);
         assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
     }
-//
-//    @Test
-//    public void should_teacher_have_name_and_age_and_classes() throws Exception {
-//        LinkedList<practice11.Klass> linkedList = new LinkedList<Klass>();
-//        linkedList.add(klass2);
-//        Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-//        assertThat(tom.getName()).isEqualTo("Tom");
-//        assertThat(tom.getAge()).isEqualTo(21);
-//        assertThat(tom.getClasses().size()).isEqualTo(1);
-//        assertThat(tom.getClasses().toArray()[0]).isEqualTo(klass2);
-//    }
+
+    @Test
+    public void should_teacher_have_name_and_age_and_classes() throws Exception {
+        LinkedList<Klass> linkedList = new LinkedList<Klass>();
+        linkedList.add(klass2);
+        Teacher tom = new Teacher(1, "Tom", 21, linkedList);
+        assertThat(tom.getName()).isEqualTo("Tom");
+        assertThat(tom.getAge()).isEqualTo(21);
+        assertThat(tom.getClasses().size()).isEqualTo(1);
+        assertThat(tom.getClasses().toArray()[0]).isEqualTo(klass2);
+    }
 //
 //    @Test
 //    public void should_teacher_introduce_itself_with_which_classes_it_teaches() throws Exception {
