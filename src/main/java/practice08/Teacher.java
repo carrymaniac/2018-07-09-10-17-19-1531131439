@@ -1,6 +1,5 @@
 package practice08;
 
-
 public class Teacher extends Person{
     Klass klass;
     public Teacher(Integer id, String name, Integer age, Klass klass) {
@@ -27,5 +26,13 @@ public class Teacher extends Person{
         } else {
             return super.introduce() + " I am a Teacher. I teach " + this.klass.getDisplayName() + ".";
         }
+    }
+
+    public String introduceWith(Student student) {
+        return student.klass.equals(this.klass) ?
+                "My name is Tom. I am 21 years old. I am a Teacher. I teach "+student.getName()+"."
+                :
+                "My name is Tom. I am 21 years old. I am a Teacher. I don't teach "+student.getName()+"."
+                ;
     }
 }
