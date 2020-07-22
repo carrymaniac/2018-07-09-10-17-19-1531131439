@@ -33,7 +33,7 @@ public class Klass {
         if(this.studentMembers.contains(student.id)){
             this.leader = student;
         }else {
-            System.out.println("It is not one of us.");
+            System.out.print("It is not one of us.\n");
         }
     }
     public Student getLeader(){
