@@ -26,8 +26,8 @@ public class Teacher extends Person{
         if (classes.size()==0) {
             return super.introduce() + " I am a Teacher. I teach No Class.";
         } else {
-            String collect = classes.stream().map(klass -> String.valueOf(klass.number)).collect(Collectors.joining(","));
-            return super.introduce() + " I am a Teacher. I teach " + collect + ".";
+            String collect = classes.stream().map(klass -> String.valueOf(klass.number)).collect(Collectors.joining(", "));
+            return super.introduce() + " I am a Teacher. I teach Class " + collect + ".";
         }
     }
 
