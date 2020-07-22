@@ -22,6 +22,12 @@ public class Student extends Person {
     }
     @Override
     public String introduce() {
-        return super.introduce()+" I am a Student. I am at "+this.klass.getDisplayName()+".";
+        String result = super.introduce()+" I am a Student. ";
+        if(this.equals(this.klass.leader)){
+            return result+"I am Leader of "+this.klass.getDisplayName()+".";
+        }else {
+            return result+"I am at "+this.klass.getDisplayName()+".";
+        }
+
     }
 }
