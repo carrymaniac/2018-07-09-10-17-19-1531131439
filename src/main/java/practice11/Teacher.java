@@ -1,7 +1,5 @@
 package practice11;
 
-import practice09.Student;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,6 +27,14 @@ public class Teacher extends Person{
             String collect = classes.stream().map(klass -> String.valueOf(klass.number)).collect(Collectors.joining(", "));
             return super.introduce() + " I am a Teacher. I teach Class " + collect + ".";
         }
+    }
+    public boolean isTeaching(Student student){
+        for (Klass klass:classes) {
+            if(klass.isMember(student)){
+                return true;
+            }
+        }
+        return false;
     }
 
 //    public String introduceWith(Student student) {

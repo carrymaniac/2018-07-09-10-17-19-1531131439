@@ -23,14 +23,18 @@ public class Klass {
     public void setNumber(Integer number) {
         this.number = number;
     }
+
     public void appendMember(Student student){
         studentMembers.add(student.getId());
+    }
+    public boolean isMember(Student student){
+        return this.studentMembers.contains(student.id);
     }
     public String getDisplayName() {
         return "Class "+number;
     }
     public void assignLeader(Student student){
-        if(this.studentMembers.contains(student.id)){
+        if(this.isMember(student)){
             this.leader = student;
         }else {
             System.out.print("It is not one of us.\n");
