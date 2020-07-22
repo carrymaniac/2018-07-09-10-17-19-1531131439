@@ -84,14 +84,14 @@ public class Practice11Test {
         Student tom = new Student(1, "Tom", 21, klass2);
         assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am at Class 2.");
     }
-//
-//    @Test
-//    public void should_student_introduce_itself_as_class_leader() throws Exception {
-//        Student tom = new Student(1, "Tom", 21, klass2);
-//        klass2.appendMember(tom);
-//        klass2.assignLeader(tom);
-//        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
-//    }
+
+    @Test
+    public void should_student_introduce_itself_as_class_leader() throws Exception {
+        Student tom = new Student(1, "Tom", 21, klass2);
+        klass2.appendMember(tom);
+        klass2.assignLeader(tom);
+        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
+    }
 //
 //    @Test
 //    public void should_teacher_have_name_and_age_and_classes() throws Exception {
