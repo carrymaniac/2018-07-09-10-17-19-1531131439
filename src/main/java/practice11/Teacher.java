@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Teacher extends Person{
+public class Teacher extends Person implements JoinListener{
     private List<Klass> classes = new ArrayList<>();
 
     public Teacher(Integer id, String name, Integer age, List<Klass> classes) {
         super(id, name, age);
         this.classes = classes;
+        classes.stream().forEach(klass -> {
+            klass.register(this);
+        });
     }
 
     public Teacher(Integer id, String name, Integer age) {
@@ -43,5 +46,16 @@ public class Teacher extends Person{
                 :
                 "My name is Tom. I am 21 years old. I am a Teacher. I don't teach "+student.getName()+"."
                 ;
+    }
+
+    @Override
+    public void update(Student student) {
+        if(student.klass.getLeader()==student){
+            String str = String.format("I am %s. I know %s become Leader of Class %s.",this.name,student.name,student.klass.number);
+            System.out.print(str+"\n");
+            return;
+        }
+        String str = String.format("I am %s. I know %s has joined Class %s.",this.name,student.name,student.klass.number);
+        System.out.print(str+"\n");
     }
 }
