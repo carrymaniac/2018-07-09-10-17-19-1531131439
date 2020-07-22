@@ -37,11 +37,11 @@ public class Teacher extends Person{
         return false;
     }
 
-//    public String introduceWith(Student student) {
-//        return student.klass.equals(this.klass) ?
-//                "My name is Tom. I am 21 years old. I am a Teacher. I teach "+student.getName()+"."
-//                :
-//                "My name is Tom. I am 21 years old. I am a Teacher. I don't teach "+student.getName()+"."
-//                ;
-//    }
+    public String introduceWith(Student student) {
+        return isTeaching(student) ?
+                "My name is Tom. I am 21 years old. I am a Teacher. I teach "+student.getName()+"."
+                :
+                "My name is Tom. I am 21 years old. I am a Teacher. I don't teach "+student.getName()+"."
+                ;
+    }
 }
