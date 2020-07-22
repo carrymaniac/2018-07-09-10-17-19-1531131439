@@ -6,12 +6,12 @@ import org.junit.Test;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public class Practice08Test {
-//    private Klass klass;
-//
-//    @Before
-//    public void setup() {
-//        klass = new Klass(2);
-//    }
+    private Klass klass;
+
+    @Before
+    public void setup() {
+        klass = new Klass(2);
+    }
 
     @Test
     public void should_person_have_id_name_and_age() throws Exception {
@@ -33,11 +33,11 @@ public class Practice08Test {
         String introduce = tom.introduce();
         assertThat(introduce).isEqualTo("My name is Tom. I am 21 years old.");
     }
-//
-//    @Test
-//    public void should_class_have_a_number() throws Exception {
-//        assertThat(klass.getNumber()).isEqualTo(2);
-//    }
+
+    @Test
+    public void should_class_have_a_number() throws Exception {
+        assertThat(klass.getNumber()).isEqualTo(2);
+    }
 //
 //    @Test
 //    public void should_class_get_display_name() throws Exception {
